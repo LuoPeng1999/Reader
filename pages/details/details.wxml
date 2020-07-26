@@ -1,0 +1,83 @@
+<view class="detailspage" wx:for="{{bookInfoList}}" wx:key="*this">
+    <view class="bgImg" style="background-image:url({{item.imgUrl}});"></view>
+    <view class="header">
+        <image src="{{item.imgUrl}}"></image>
+        <text class="bookName">{{item.bookName}}</text>
+        <text class="info">
+            <text class="authorName">{{item.authorName}}</text>
+            <text class="dot">·</text>
+            <text class="chanName">{{item.chanName}}</text>
+        </text>
+    </view>
+    <view class="bgbox">
+        <view class="left">
+            <text class="wordsCnt"><text>{{item.wordsCnt}}</text>万字</text>
+            <text class="bookStatus">{{item.bookStatus}}</text>
+        </view>
+        <view class="right">
+            <text class="monthTicket">
+                <text class="ticket">{{item.rateInfo.rate}}</text>
+                <text>分</text>
+            </text>
+            <text class="recomAll">
+                <text class="recom">{{item.rateInfo.userCount}}</text>
+                <text>人评价</text>
+            </text>
+        </view>
+    </view>
+    <!-- {{showDesc?'olddesc':'newdesc'}} -->
+    <view class="{{showDesc?'newdesc':'olddesc'}}" bindtap="showDesc">{{item.desc}}</view>
+    <view class="directory">
+        <image src="../../image/mulu.png" class="left"></image>
+        <text class="title">目录</text>
+        <image src="../../image/youjiantou-copy.png" class="right" bindtap="gochapter"></image>
+        <text class="updChapterName">{{item.updChapterName}}</text>
+        <text class="updTime">{{item.updTime}}更新</text>
+    </view>
+</view>
+
+<view class="content" wx:for="{{bookchapterList}}" wx:key="*this">
+    <view class="tryRead">章节试读</view>
+    <view class="chapter">
+        <text class="chapterName">{{item.chapterName}}</text>
+        <text class="chapterContent {{turnup?'':'active'}}" bindtap="tryRead">{{item.content}}</text>
+    </view>
+    <view class="loadmore {{turnup?'':'active'}}" bindtap="tryRead">
+        <image src="../../image/down.png" />
+    </view>
+</view>
+
+<view class="footer">
+    <view class="share">
+        <image src="../../image/weixin.png" lazy-load="false" />
+        <text>分享给好友</text>
+        <button open-type="share"></button>
+    </view>
+    <view class="poster">
+        <image src="../../image/xiazai.png" lazy-load="false" bindtap="poster" />
+        <text>生成海报</text>
+    </view>
+    <view class="btn">
+        <button bindtap="addcollect">加入书架</button>
+        <button bindtap="getRead">立即阅读</button>
+    </view>
+</view>
+  
+
+<!-- 生成海报弹窗 -->
+<van-popup
+  show="{{ show }}"
+  closeable
+  round
+  position="bottom"
+  custom-style="height: 95%"
+  bind:close="onClose"
+  z-index="9999"
+>
+<view class="shareContent" wx:for="{{bookInfoList}}" wx:key="*this">
+    <view class="content">
+        <image src="{{posterImg}}" lazy-load="false" />
+    </view>
+    <button bindtap="saveposterImg">保存图片</button>
+</view>
+</van-popup>

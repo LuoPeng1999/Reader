@@ -1,0 +1,96 @@
+/* pages/searchResult/searchResult.wxss */
+.searchResultpage{
+    width: 100%;
+    height: 100%;
+}
+.searchResultpage .search{
+    width: 100%;
+    margin-top: 20rpx;
+    height: 120rpx;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid #F0F0F0;
+}
+.searchResultpage .search input{
+    width: 75%;
+    height: 60rpx;
+    margin-top: 30rpx;
+    padding-left: 80rpx;
+}
+.searchResultpage .search image{
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    left: 20rpx;
+    top: 40rpx;
+}
+.searchResultpage .search text{
+    position: absolute;
+    right: 20rpx;
+    top: 40rpx;
+    color: #5D78C9;
+}
+.searchResultpage .resultList{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+.searchResultpage .resultList .item{
+    width: 90%;
+    height: 238rpx;
+    margin: 0 auto;
+    border-top: 1px solid #ccc;
+}
+.searchResultpage .resultList .item:last-child{
+    border-bottom: 1px solid #ccc;
+}
+.searchResultpage .resultList .item .left{
+    float: left;
+    width: 30%;
+    height: 198rpx;
+    text-align: center;
+    margin-top: 20rpx;
+}
+.searchResultpage .resultList .item .left image{
+    display: inline-block;
+    width: 154rpx;
+    height: 198rpx;
+}
+.searchResultpage .resultList .item .right{
+    float: left;
+    width: 70%;
+    height: 198rpx;
+    margin-top: 20rpx;
+}
+.searchResultpage .resultList .item .right .bName{
+    float: left;
+    font-size: 32rpx;
+    color: #333;
+}
+.searchResultpage .resultList .item .right .bName:first-child{
+    margin-left: 20rpx;
+}
+.searchResultpage .resultList .item .right .bName .red{
+    color: red;
+}
+.searchResultpage .resultList .item .right .bInfo{
+    font-size: 24rpx;
+    color: #999;
+    margin-top: 60rpx;
+    margin-left: 20rpx;
+}
+.searchResultpage .resultList .item .right .desc{
+    float: left;
+    font-size: 28rpx;
+    color: #666;
+    margin-top: 20rpx;
+    margin-left: 20rpx;
+    width: 90%;
+    height: 80rpx;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow:hidden;
+    -webkit-box-orient: vertical;
+}

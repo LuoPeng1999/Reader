@@ -1,0 +1,292 @@
+/* pages/read/read.wxss */
+.readpage{
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
+    overflow: hidden;
+}
+.readpage .navbar{
+    width: 90%;
+    margin: 40rpx auto;
+    height: 80rpx;
+    background-color: #fff;
+    display: flex;
+    border-radius: 10rpx;
+}
+.readpage .navbar view{
+    flex: 1;
+    overflow: hidden;
+    line-height: 80rpx;
+}
+.readpage .navbar .left{
+    position: relative;
+}
+.readpage .navbar .left .myicon{
+    float: left;
+    font-size: 40rpx;
+    /* margin-top: 26rpx; */
+    margin-left: 30rpx;
+}
+.readpage .navbar .left text{
+    float: left;
+    margin-left: 14rpx;
+    font-size: 28rpx;
+}
+.readpage .navbar .left::after{
+    content: "";
+    width: 2rpx;
+    height: 40rpx;
+    background-color: #ccc;
+    position: absolute;
+    top: 20rpx;
+    right: 0rpx;
+}
+.readpage .navbar .center{
+    position: relative;
+
+}
+.readpage .navbar .center .myicon{
+    float: left;
+    font-size: 40rpx;
+    /* margin-top: 22rpx; */
+    margin-left: 60rpx;
+}
+.readpage .navbar .center text{
+    float: left;
+    margin-left: 10rpx;
+    font-size: 28rpx;
+}
+.readpage .navbar .center::after{
+    content: "";
+    width: 2rpx;
+    height: 40rpx;
+    background-color: #ccc;
+    position: absolute;
+    top: 20rpx;
+    right: 0rpx;
+}
+.readpage .navbar .right .myicon{
+    float: right;
+    font-size: 36rpx;
+    /* margin-top: 26rpx; */
+    margin-right: 30rpx;
+}
+.readpage .navbar .right text{
+    float: right;
+    margin-right: 14rpx;
+    font-size: 28rpx;
+}
+.readpage .readContent .title{
+    font-size: 40rpx;
+    font-weight: bold;
+    /* color: #333; */
+    margin-left: 32rpx;
+}
+.p_class{
+    text-indent: 64rpx;
+    /* font-size: 32rpx; */
+    display: block;
+    /* line-height: 44rpx; */
+    /* color: #333; */
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    padding-top: 40rpx;
+}
+.p_class:last-child{
+    padding-bottom: 40rpx;
+}
+
+.chapterlist{
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+}
+.chapterlist .head{
+    width: 100%;
+    height: 210rpx;
+    background-color: #F2F2F2;
+    position: fixed;
+}
+.chapterlist .head .info{
+    float: left;
+}
+.chapterlist .head .info .left{
+    float: left;
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+}
+.chapterlist .head .info .left image{
+    width: 120rpx;
+    height: 150rpx;
+}
+.chapterlist .head .info .right{
+    float: left;
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+    overflow: hidden;
+}
+.chapterlist .head .info .right .bookName{
+    float: left;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333;
+    margin-top: 30rpx;
+}
+.chapterlist .head .info .right .authorName{
+    display: block;
+    margin-top: 92rpx;
+    font-size: 24rpx;
+    color: #333;
+}
+.chapterlist .head>.myicon{
+    float: right;
+    font-size: 40rpx;
+    margin-right: 30rpx;
+    margin-top: 90rpx;
+}
+.chapterlist .list{
+    width: 100%;
+    background-color: #fff;
+}
+.chapterlist .list .title{
+    width: 100%;
+    height: 60rpx;
+    font-size: 28rpx;
+    border-bottom: 2rpx solid #f0f0f0;
+    line-height: 60rpx;
+    padding-left: 30rpx;
+    color: #333;
+}
+.chapterlist .list .content{
+    color: #333;
+    height: 120rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-top: 20rpx;
+    overflow: hidden;
+}
+.chapterlist .list .content:last-child{
+    padding-bottom: 40rpx;
+}
+.chapterlist .list .content .cN{
+    font-size: 28rpx;
+    float: left;
+}
+.chapterlist .list .content .uT{
+    font-size: 24rpx;
+    margin-top: 48rpx;
+    display: block;
+}
+
+.set{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+.set .chapterName{
+    font-size: 24rpx;
+    color: #333;
+    margin-top: 30rpx;
+}
+.set .slidebox{
+    margin-top: 50rpx;
+}
+.set .slidebox .left{
+    float: left;
+    margin-left: 30rpx;
+    margin-top: -6rpx;
+}
+.set .slidebox .left .myicon{
+    font-size: 36rpx;
+}
+.set .slidebox .center{
+    float: left;
+    width: 76%;
+    margin-left: 28rpx;
+    margin-top: 16rpx;
+}
+.set .slidebox .right{
+    float: right;
+    margin-right: 30rpx;
+    margin-top: -6rpx;
+}
+.set .slidebox .right .myicon{
+    font-size: 32rpx;
+}
+.set .tab{
+    margin-top: 150rpx;
+}
+.set .tab .left{
+    float: left;
+    margin-left: 80rpx;
+}
+.set .tab .left .myicon{
+    display: block;
+    font-size: 40rpx;
+}
+.set .tab .left text{
+    display: block;
+    font-size: 20rpx;
+    color: #333;
+    margin-top: 10rpx;
+}
+.set .tab .center{
+    float: left;
+    margin-left: 232rpx;
+}
+.set .tab .center .myicon{
+    display: block;
+    font-size: 40rpx;
+}
+.set .tab .center text{
+    display: block;
+    font-size: 20rpx;
+    color: #333;
+    margin-top: 10rpx;
+}
+.set .tab .right{
+    float: right;
+    margin-right: 80rpx;
+}
+.set .tab .right .myicon{
+    display: block;
+    font-size: 40rpx;
+}
+.set .tab .right text{
+    display: block;
+    font-size: 20rpx;
+    color: #333;
+    margin-top: 10rpx;
+}
+.custom-button{
+    width: 20rpx;
+    height: 20rpx;
+    background-color: #3B3F47;
+    border-radius: 50%;
+}
+
+.fontchange{
+    width: 100%;
+    height: 100%;
+    font-size: 32rpx;
+    color: #333;
+    background-color: #fff;
+}
+.fontchange .left{
+    float: left;
+    margin-left: 30rpx;
+    margin-top: 40rpx;
+}
+.fontchange .center{
+    float: left;
+    width: 70%;
+    margin-left: 30rpx;
+    margin-top: 60rpx;
+}
+.fontchange .right{
+    float: right;
+    margin-right: 30rpx;
+    margin-top: 40rpx;
+}

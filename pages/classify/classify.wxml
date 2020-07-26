@@ -1,0 +1,19 @@
+<!--pages/classify/classify.wxml-->
+<view class="mela">
+    <van-tabs type="card" bind:click="onClick" color="#ed424b">
+        <van-tab title="男生"></van-tab>
+        <van-tab title="女生"></van-tab>
+    </van-tabs>
+</view>
+<view style="width: {{2*windowWidth}}rpx;" class="classify" wx:for="{{classifyMaleList}}" wx:for-item="classifyitem" wx:key="*this" wx:if="{{gender=='male'}}">
+    <view class="title">{{classifyitem.title}}</view>
+    <view class="item" wx:for="{{classifyitem.classify}}" bindtap="goClassifyRes" wx:for-item="item" data-subCatId="{{item.subCatId}}" data-catId="{{item.catId}}" wx:key="{{item}}">{{item.title}}</view>
+</view>
+<view class="classify" wx:for="{{classifyFemaleList}}" wx:for-item="classifyitem" wx:key="*this" wx:if="{{gender=='female'}}">
+    <view class="title">{{classifyitem.title}}</view>
+    <view class="item" wx:for="{{classifyitem.classify}}" bindtap="goClassifyRes" wx:for-item="item" data-subCatId="{{item.subCatId}}" data-catId="{{item.catId}}" wx:key="{{item}}">{{item.title}}</view>
+</view>
+<view class="end" style="width: {{2*windowWidth}}rpx;">
+    没有更多了~
+</view>
+  

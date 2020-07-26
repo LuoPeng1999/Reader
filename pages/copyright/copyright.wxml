@@ -1,0 +1,21 @@
+<!--pages/copyright/copyright.wxml-->
+<view class="copyrightpage" wx:for="{{bookCopyright}}" wx:key="*this">
+    <image src="{{item.imgUrl}}"  />
+    <view class="bookName">{{item.bookName}}</view>
+    <view class="info">
+        <view class="booktype">
+            <text class="chanName">{{item.chanName}}</text>
+            <text class="type">类型</text>
+        </view>
+        <view class="booktime">
+            <text class="jointime">{{item.joinTime}}</text>
+            <text class="time">上架</text>
+        </view>
+        <view class="bookcnt">
+            <text class="showWordsCnt">{{item.showWordsCnt}}</text>
+            <text class="cnt">字/{{item.bookStatus}}</text>
+        </view>
+    </view>
+    <text class="hr">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</text>
+    <text class="ad">本作品由第三方出版社授权起点中文网制作发行</text>
+</view>

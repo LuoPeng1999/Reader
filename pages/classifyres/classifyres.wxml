@@ -1,0 +1,31 @@
+<!--pages/classifyres/classifyres.wxml-->
+<view class="classifyres">
+    <van-tabs active="{{active}}" animated bind:change="onChange">
+        <van-tab title="人气"></van-tab>
+        <van-tab title="时间"></van-tab>
+        <van-tab title="字数"></van-tab>
+        <van-tab title="收藏"></van-tab>
+        <van-tab title="推荐"></van-tab>
+        <van-tab title="点击"></van-tab>
+    </van-tabs>
+</view>
+<view class="classifyresList" style="width: {{2*windowWidth}}rpx;">
+    <view class="item" wx:for="{{classifyresList}}" wx:key="*this">
+        <image src="{{item.imgUrl}}" lazy-load="true" data-id="{{index}}" bindtap="goDetails" />
+        <view class="infos">
+            <view class="bookName">{{item.bookName}}</view>
+            <view class="desc">{{item.desc}}</view>
+            <view class="info">
+                <text class="iconfont icon-yonghu myicon"></text>
+                <text class="bookAuth">{{item.bookAuth}}</text>
+                <text class="cnt">{{item.cnt}}</text>
+                <text class="state">{{item.state}}</text>
+                <text class="cat">{{item.cat}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="loading" style="width: {{2*windowWidth}}rpx;" wx:if="{{loadstatus}}">
+    <van-loading size="24px">加载中...</van-loading>
+</view>
+<text class="iconfont icon-fanhuidingbu goback" bindtap="goTop" wx:if="{{floorstatus}}"></text>

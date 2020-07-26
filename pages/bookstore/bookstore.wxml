@@ -1,0 +1,98 @@
+<!--pages/bookstore/bookstore.wxml-->
+<view class="bookstorepage">
+    <view class="search">
+        <input class="weui-input"  maxlength="16" bindinput="bindKeyInput" placeholder="绍宋" bindtap="toSearch" />
+        <image src="/image/sousuo.png"></image>
+    </view>
+
+    <view class="index-classify">
+        <view class="classify">
+            <text class="{{ismale?'sexActive':''}}" bindtap="changemale">男</text>
+            <text class="{{ismale?'':'sexActive'}}"  bindtap="changemale">女</text>
+            <image src="../../image/line.svg" class="{{ismale?'':'lineActive'}}" lazy-load="true" />
+        </view>
+    </view>
+
+    <view class="index-module" style="padding-top: 32rpx;">
+        <view class="index-module-header">
+            <text class="index-module-header-title">24小时热销</text>
+        </view>
+        <view class="index-module-popular">
+            <view class="popular-cover-blur-wrap">
+                <image class="popular-cover-blur" lazyLoad="true" src="{{hotRankList[popularIndex].imgUrl}}"></image>
+            </view>
+            <view class="popular-list">
+                <view bindtap="goDetails" class="popular-book {{bookIndex===2?'last':''}}" data-book-id="{{book.bid}}"  wx:if="{{bookIndex<3}}" wx:for="{{hotRankList}}" wx:for-index="bookIndex" wx:for-item="book" wx:key="{{book}}">
+                    <image class="caret-right" src="../../image/caret-right.svg" wx:if="{{popularIndex===bookIndex}}"></image>
+                    <text class="popular-book-title">{{bookIndex+1}}.{{book.bName}}</text>
+                    <text class="popular-book-detail">{{book.bAuth}}</text>
+                </view>
+            </view>
+            <view class="popular-cover-list">
+                <view class="popular-cover" data-book-id="{{hotRankList[0].bid}}" style="transform: translate3d({{(popularIndex-0+3)%3*5}}px, {{(popularIndex-0+3)%3*3.5}}px, {{-(popularIndex-0+3)%3*5}}px); opacity: {{popularIndex==0?1:0.5}}">
+                    <image src="{{hotRankList[0].imgUrl}}"></image>
+                </view>
+                <view class="popular-cover" data-book-id="{{hotRankList[1].bid}}" style="transform: translate3d({{(popularIndex-1+3)%3*5}}px, {{(popularIndex-1+3)%3*3.5}}px, {{-(popularIndex-1+3)%3*5}}px); opacity: {{popularIndex==1?1:0.5}}">
+                    <image src="{{hotRankList[1].imgUrl}}"></image>
+                </view>
+                <view  class="popular-cover" data-book-id="{{hotRankList[2].bid}}" style="transform: translate3d({{(popularIndex-2+3)%3*5}}px, {{(popularIndex-2+3)%3*3.5}}px, {{-(popularIndex-2+3)%3*5}}px); opacity: {{popularIndex==2?1:0.5}}">
+                    <image src="{{hotRankList[2].imgUrl}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="index-module-book"> 
+            <view bindtap="goDetails" class="index-module-book-item" data-book-id="{{book.bid}}" wx:if="{{bookIndex>=3}}" wx:for="{{hotRankList}}" wx:for-index="bookIndex" wx:for-item="book" wx:key="{{book}}">
+                <image alt="book.bName" lazyLoad="true" src="{{book.imgUrl}}"></image>
+                <text class="index-module-book-name">{{book.bName}}</text>
+                <text class="index-module-book-auth">{{book.bAuth}}</text>
+            </view>
+        </view> 
+    </view>
+    <view class="index-module" style="padding-top: 32rpx;">
+        <view class="index-module-header">
+            <text class="index-module-header-title">今日福利</text>
+            <view class="time">
+                <block wx:for="{{freeTime}}" wx:for-index="timeIndex" wx:for-item="time" wx:key="{{time}}">
+                    <image src="../../image/colon.svg" lazy-load="true" wx:if="{{timeIndex>0}}" />
+                    <text>{{time}}</text>
+                </block>
+            </view>
+            <view class="free-more" bindtap="goMore">
+                <text>更多</text>
+                <image src="../../image/arrow-right.svg"></image>
+            </view>
+        </view>
+        <view class="index-module-book"> 
+            <view bindtap="goDetails" class="index-module-book-item" data-book-id="{{book.bid}}"  wx:for="{{limitFreeList}}" wx:for-index="bookIndex" wx:for-item="book" wx:key="{{book}}">
+                <image alt="book.bName" lazyLoad="true" src="{{book.imgUrl}}"></image>
+                <text class="index-module-book-name">{{book.bName}}</text>
+                <text class="index-module-book-auth">{{book.bAuth}}</text>
+                <text class="free">免费</text>
+            </view>
+        </view> 
+    </view>
+    <view class="index-module" style="padding-top: 32rpx;">
+        <view class="index-module-header">
+            <text class="index-module-header-title">经典完本</text>
+        </view>
+        <view class="index-module-book"> 
+            <view bindtap="goDetails" class="index-module-book-item" data-book-id="{{book.bid}}"  wx:for="{{finNovelList}}" wx:for-index="bookIndex" wx:for-item="book" wx:key="{{book}}">
+                <image alt="book.bName" lazyLoad="true" src="{{book.imgUrl}}"></image>
+                <text class="index-module-book-name">{{book.bName}}</text>
+                <text class="index-module-book-auth">{{book.bAuth}}</text>
+            </view>
+        </view> 
+    </view>
+    <view class="index-module" style="padding-top: 32rpx;">
+        <view class="index-module-header">
+            <text class="index-module-header-title">口碑新书</text>
+        </view>
+        <view class="index-module-book"> 
+            <view bindtap="goDetails" class="index-module-book-item" data-book-id="{{book.bid}}"  wx:for="{{fyRankList}}" wx:for-index="bookIndex" wx:for-item="book" wx:key="{{book}}">
+                <image alt="book.bName" lazyLoad="true" src="{{book.imgUrl}}"></image>
+                <text class="index-module-book-name">{{book.bName}}</text>
+                <text class="index-module-book-auth">{{book.bAuth}}</text>
+            </view>
+        </view> 
+    </view>
+</view>

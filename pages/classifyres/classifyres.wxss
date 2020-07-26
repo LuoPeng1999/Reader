@@ -1,0 +1,94 @@
+/* pages/classifyres/classifyres.wxss */
+.item{
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+    padding: 10rpx 30rpx;
+}
+.item:first-child{
+    margin-top: 10rpx;
+}
+.item image{
+    float: left;
+    width: 132rpx;
+    height: 176rpx;
+}
+.item .infos{
+    width: 70%;
+    float: left;
+    margin-left: 20rpx;
+    /* background-color: pink; */
+}
+.item .infos .bookName{
+    color: #33373d;
+    margin-top: 4rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+}
+.item .infos .desc{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    font-size: 28rpx;
+    margin-top: 10rpx;
+    color: #969ba3;
+}
+.item .infos .info{
+    font-size: 24rpx;
+    color: #969ba3;
+    margin-top: 10rpx;
+}
+.item .infos .info .myicon{
+    font-size: 24rpx;
+    float: left;
+    margin-top: 4rpx;
+}
+.item .infos .info .bookAuth{
+    float: left;
+    margin-left: 4rpx;
+}
+.item .infos .info .cat{
+    float: right;
+    margin-right: 4rpx;
+    font-size: 20rpx;
+    border: 2rpx solid #ccc;
+    border-radius: 4rpx;
+    padding: 4rpx 8rpx;
+}
+.item .infos .info .state{
+    float: right;
+    margin-right: 4rpx;
+    font-size: 20rpx;
+    padding: 4rpx 8rpx;
+    color: #ed424b;
+    border: 2rpx solid #ed424b;
+    border-radius: 4rpx;
+}
+.item .infos .info .cnt{
+    float: right;
+    margin-right: 4rpx;
+    font-size: 20rpx;
+    padding: 4rpx 8rpx;
+    color: #4284ed;
+    border: 2rpx solid #4284ed;
+    border-radius: 4rpx;
+}
+.goback{
+    width: 80rpx;
+    height: 80rpx;
+    font-size: 40rpx;
+    line-height: 86rpx;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 50rpx;
+    background: rgba(0,0,0,.3);
+    right: 30rpx;
+    border-radius: 50%;
+}
+.loading{
+    text-align: center;
+    padding: 40rpx 0;
+}

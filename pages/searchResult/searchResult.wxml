@@ -1,0 +1,32 @@
+<!--pages/searchResult/searchResult.wxml-->
+<view class="searchResultpage">
+    <view class="search">
+        <input class="weui-input"  maxlength="16" bindtap="goSearch"  value="{{keyword}}" />
+        <image src="/image/sousuo.png" bindtap="searchStart"></image>
+        <text catchtap="onCancel">取消</text>
+    </view>
+
+    <view class="resultList">
+        <view class="item" wx:for="{{bookstoreList}}" wx:key="*this" bindtap="goDetails">
+            <view class="left">
+                <image src="{{item.imgUrl}}" data-id="{{index}}" lazy-load="true"></image>
+            </view>
+            <view class="right">
+                <view wx:for="{{item.bName}}" wx:key="*this" class="bName">
+                    <text wx:if="{{item.key == true}}"  class="red">{{item.str}}</text>
+                    <text wx:else >{{item.str}}</text>
+                </view>
+                <view class="bInfo">
+                    <text class="bAuth">{{item.bAuth}}</text>
+                    <text class="dot">·</text>
+                    <text class="cat">{{item.cat}}</text>
+                    <text class="dot">·</text>
+                    <text class="state">{{item.state}}</text>
+                    <text class="dot">·</text>
+                    <text class="cnt">{{item.cnt}}</text>
+                </view>
+                <view class="desc">{{item.desc}}</view>
+            </view>
+        </view>
+    </view>
+</view>

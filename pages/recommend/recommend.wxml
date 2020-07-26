@@ -1,0 +1,41 @@
+<!--pages/recommend/recommend.wxml-->
+<view class="recommendpage">
+<!-- 推荐页面start -->
+    <view class="search">
+        <input class="weui-input"  maxlength="16" bindinput="bindKeyInput" placeholder="绍宋" bindtap="toSearch" /> 
+        <image src="/image/sousuo.png"></image>
+        <!-- <van-search value="{{ value }}" placeholder="请输入搜索关键词" /> -->
+    </view>
+    <view class="recommendList">
+        <view class="item" wx:for="{{recommendList}}" wx:key="*this">
+            <view class="top">
+                <view class="left">
+                    <image src="{{item.imgUrl}}" lazy-load="true" data-id="{{index}}" bindtap="goDetails"></image>
+                </view>
+                <view class="right">
+                    <view class="bName">{{item.bookName}}</view>
+                    <view class="bAuth"><text>{{item.authorName}}</text><text class="dot">·</text><text>{{item.categoryName}}</text></view>
+                    <view class="status"><text>{{item.actionStatus}}</text><text class="dot">·</text><text>{{item.wordsCount}}字</text><text class="dot">·</text><text>评分:{{item.rate}}</text></view>
+                </view>
+            </view>
+            <view class="desc">
+                <text>{{item.desc}}</text>
+            </view>
+             <view class="center">
+                -<text>{{item.honor}}</text>-
+            </view>
+            <view class="footer">
+                <view class="left">
+                    <image src="/image/share.png" lazy-load="true"></image>
+                    <image src="/image/add.png" lazy-load="true" data-id="{{index}}" bindtap="addcollect"></image>
+                    <button open-type="share" data-id="{{index}}"></button>
+                </view>
+                <view class="right">
+                    <button class="btn" size="mini"  data-id="{{index}}" bindtap="goRead">立即阅读</button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <text class="updated">今日份已完，每日定时更新，明天再来哦</text>
+<!-- 推荐页面end -->
+</view>

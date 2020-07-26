@@ -1,0 +1,36 @@
+/* pages/classify/classify.wxss */
+.mela{
+    width: 240rpx;
+    margin: 0 auto;
+}
+.classify{
+    padding-left: 20rpx;
+    background-color: #fff;
+    overflow: hidden;
+}
+.classify .title{
+    font-family: sans-serif;
+    color: #33373d;
+    font-size: 32rpx;
+    font-weight: bold;
+    padding: 20rpx 0;
+    border-bottom: 2rpx solid #f0f0f0;
+    border-top: 2rpx solid #f0f0f0;
+}
+.classify .item{
+    float: left;
+    border: 2rpx solid #969ba3;
+    color: #969ba3;
+    padding: 10rpx 20rpx;
+    margin-right: 26rpx;
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    border-radius: 30rpx;
+    margin-bottom: 20rpx;
+}
+.end{
+    text-align: center;
+    font-size: 24rpx;
+    margin: 20rpx auto; 
+    color: #969ba3;
+}

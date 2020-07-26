@@ -1,0 +1,165 @@
+<!--pages/read/read.wxml-->
+<view class="readpage" style="background-color: {{contentCss.backgroundColor}};color: {{contentCss.color}};">
+    <view class="navbar" style="background-color: {{cataloguesCss.contentColor}};color: {{cataloguesCss.color}};font-size: {{contentCss.contentSize}}px; border: 1px solid {{contentCss.borderColor}};">
+        <view class="left" hidden="{{num>0}}" bindtap="goCopyright">
+            <!-- <image src="../../image/left.png" /> -->
+            <text class="iconfont icon-arrow-l myicon"></text>
+            <text>版权信息</text>
+        </view>
+        <view class="left" hidden="{{num==0}}" bindtap="prevChapter">
+            <!-- <image src="../../image/left.png" /> -->
+            <text class="iconfont icon-arrow-l myicon"></text>
+            <text>上一章</text>
+        </view>
+        <view class="center" bindtap="showCatalogue">
+            <!-- <image src="../../image/mulu.png" /> -->
+            <text class="iconfont icon-mulu myicon"></text>
+            <text>目录</text>
+        </view>
+        <view class="right" bindtap="nextChapter">
+            <!-- <image src="../../image/youjiantou-copy.png" /> -->
+            <text class="iconfont icon-zuoyoujiantou1 myicon"></text>
+            <text>下一章</text>
+        </view>
+    </view>
+
+    <view class="readContent"  bindtap="setting" style="background-color: {{contentCss.backgroundColor}}; color: {{contentCss.color}};">
+    <text class="title" style="font-size: {{(contentCss.contentSize + 4) * 2}}rpx">{{chapterName}}</text>
+    <rich-text class="content" nodes="{{content}}" style="font-size: {{contentCss.contentSize}}px;line-height: {{(contentCss.contentSize + 6) * 2}}rpx;color: {{contentCss.color}}">
+    </rich-text>
+    </view>
+
+    <view class="navbar" style="background-color: {{cataloguesCss.contentColor}};color: {{cataloguesCss.color}};font-size: {{contentCss.contentSize}}px; border: 1px solid {{contentCss.borderColor}};">
+        <view class="left" hidden="{{num>0}}" bindtap="goCopyright">
+            <!-- <image src="../../image/left.png" /> -->
+            <text class="iconfont icon-arrow-l myicon"></text>
+            <text>版权信息</text>
+        </view>
+        <view class="left" hidden="{{num==0}}" bindtap="prevChapter">
+            <!-- <image src="../../image/left.png" /> -->
+            <text class="iconfont icon-arrow-l myicon"></text>
+            <text>上一章</text>
+        </view>
+        <view class="center" bindtap="showCatalogue">
+            <!-- <image src="../../image/mulu.png" /> -->
+            <text class="iconfont icon-mulu myicon"></text>
+            <text>目录</text>
+        </view>
+        <view class="right" bindtap="nextChapter">
+            <!-- <image src="../../image/youjiantou-copy.png" /> -->
+            <text class="iconfont icon-zuoyoujiantou1 myicon"></text>
+            <text>下一章</text>
+        </view>
+    </view>
+</view>
+
+<van-popup
+  show="{{ catalogueshow }}"
+  position="left"
+  custom-style="height: 100%;width: 80%"
+  bind:close="catalogueClose"
+  z-index="999"
+>
+<view class="chapterlist">
+    <view class="head" style="background-color: {{cataloguesCss.catalogueColor}};color: {{cataloguesCss.color}};">
+        <view class="info" wx:for="{{bookInfoList}}" wx:key="*this">
+            <view class="left">
+                <image src="{{item.imgUrl}}" lazy-load="true" />
+            </view>
+            <view class="right">
+                <text class="bookName" style="color: {{cataloguesCss.color}};">{{item.bookName}}</text>
+                <text class="authorName" style="color: {{cataloguesCss.color}};">{{item.authorName}}</text>
+            </view>
+        </view>
+        <!-- <image src="../../image/youjiantou-copy.png"  /> -->
+        <text class="iconfont icon-zuoyoujiantou1 myicon" bindtap="goDetails"></text>
+    </view>
+    <view class="list" style="background-color: {{cataloguesCss.contentColor}};">
+        <view class="title" style="color: {{cataloguesCss.color}};">作品相关</view>
+        <view class="content" wx:for="{{cataloguelist}}" wx:key="*this" bindtap="goChapter">
+            <text class="cN" data-id="{{index}}" style="color: {{cataloguesCss.color}};">{{item.cN}}</text>
+            <text class="uT" data-id="{{index}}" style="color: {{cataloguesCss.color}};">{{item.uT}}</text>
+        </view>
+    </view>
+</view>
+</van-popup>
+
+<van-popup
+  show="{{ setshow }}"
+  position="bottom"
+  custom-style="height: 30%;"
+  bind:close="closesetting"
+  z-index="999"
+  close-on-click-overlay="true"
+  style="background-color: {{cataloguesCss.contentColor}};color: {{cataloguesCss.color}};"
+>
+<view class="set" style="background-color: {{cataloguesCss.contentColor}};color: {{cataloguesCss.color}};">
+    <view class="chapterName" style="color: {{cataloguesCss.color}};">{{chapterName}}</view>
+    <view class="slidebox">
+        <view class="left" bindtap="prevChapter">
+            <!-- <image src="../../image/left.png" /> -->
+            <text class="iconfont icon-arrow-l myicon"></text>
+        </view>
+        <view class="center">
+            <!-- #3B3F47 -->
+            <van-slider value="{{currentValue}}" use-button-slot bind:change="onchange" bind:drag-end="skip" active-color="#3B3F47" bar-height="2px">
+                <view class="custom-button" slot="button" style="background-color: {{cataloguesCss.color}};">
+                </view>
+            </van-slider>
+        </view>
+        <view class="right" bindtap="nextChapter">
+            <!-- <image src="../../image/youjiantou-copy.png" /> -->
+            <text class="iconfont icon-zuoyoujiantou1 myicon"></text>
+        </view>
+    </view>
+    <view class="tab">
+        <view class="left" bindtap="showCatalogue">
+            <!-- <image src="../../image/mulu.png" /> -->
+            <text class="iconfont icon-mulu myicon" style="color: {{cataloguesCss.color}};"></text>
+            <text style="color: {{cataloguesCss.color}};">目录</text>
+        </view>
+        <view class="center" hidden="{{isnight}}" bindtap="changenight">
+            <!-- <image src="../../image/night.png" /> -->
+            <text class="iconfont icon-yueduye-yejianmoshi myicon" style="color: {{cataloguesCss.color}};"></text>
+            <text style="color: {{cataloguesCss.color}};">夜间</text>
+        </view>
+        <view class="center" hidden="{{!isnight}}" bindtap="changeday">
+            <!-- <image src="../../image/sun.png" /> -->
+            <text class="iconfont icon-sun myicon" style="color: {{cataloguesCss.color}};"></text>
+            <text style="color: {{cataloguesCss.color}};">日间</text>
+        </view>
+        <view class="right" bindtap="fontsetting">
+            <!-- <image src="../../image/set.png" /> -->
+            <text class="iconfont icon-shezhi myicon" style="color: {{cataloguesCss.color}};"></text>
+            <text style="color: {{cataloguesCss.color}};">设置</text>
+        </view>
+    </view>
+</view>
+</van-popup>
+
+<van-popup
+  show="{{ fontshow }}"
+  position="bottom"
+  custom-style="height: 10%;"
+  bind:close="closesetting"
+  z-index="999"
+  close-on-click-overlay="true"
+  style="background-color: {{cataloguesCss.contentColor}};color: {{cataloguesCss.color}};"
+>
+<view class="fontchange" style="background-color: {{cataloguesCss.contentColor}};color: {{cataloguesCss.color}};">
+    <view class="left" bindtap="fontadd">
+        A+
+    </view>
+    <view class="center">
+        <van-slider value="{{fontValue}}" bind:change="fontChange" max="19" min="12" disabled="{{contentCss.contentSize >= 19 || contentCss.contentSize <= 12}}" use-button-slot active-color="#3B3F47" bar-height="2px">
+            <view class="custom-button" slot="button" style="background-color: {{cataloguesCss.color}};">
+            </view>
+        </van-slider>
+    </view>
+    <view class="right" bindtap="fontsub">
+        A-
+    </view>
+</view>
+</van-popup>
+
+

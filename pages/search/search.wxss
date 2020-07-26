@@ -1,0 +1,42 @@
+/* pages/search/search.wxss */
+.searchpage{
+    width: 100%;
+    height: 100%;
+}
+.searchpage .content{
+    width: 100%;
+    margin-top: 20rpx;
+    overflow: hidden;
+    height: 100%;
+    padding-bottom: 100rpx;
+}
+.searchpage .content .title{
+    width: 100%;
+    margin: 0 auto;
+}
+.searchpage .content .title .left{
+    float: left;
+    margin-left: 38rpx;
+}
+.searchpage .content .title .right{
+    float: right;
+    margin-right: 38rpx;
+}
+.searchpage .content .title .right image{
+    width: 38rpx;
+    height: 38rpx;
+}
+.searchpage .content .keywordlist{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 70rpx;
+}
+.searchpage .content .keywordlist text{
+    margin-left: 38rpx;
+    padding: 8rpx 30rpx;
+    border: 1px solid #ccc;
+    float: left;
+    margin-top: 38rpx;
+    border-radius: 10rpx;
+    color: #666;
+}

@@ -1,0 +1,38 @@
+<!--pages/bookrack/bookrack.wxml-->
+<view class="loginpage" style="top: {{islogin?navigationBarHeight:0}}px; {{islogin?'':'background:url(https://qidian.qpic.cn/qidian_common/349573/2179b54bbca67541340050fc97991d63/0) no-repeat center; background-size: cover;'}}">
+    <view class="login" wx:if="{{!islogin}}">
+        <image class="" src="https://qidian.qpic.cn/qidian_common/349573/15e7fc81de9e39e5f1479715750a9403/0" />
+        <text class="title">—— 登录即可同步书架记录 ——</text>
+        <button bindgetuserinfo="wxLoginTap" class="wxlogin" openType="getUserInfo">微信一键登录</button>
+        <!-- <button bindgetuserinfo="onWechatLoginTap" class="wxlogin" openType="getUserInfo">微信一键登录</button> -->
+    </view>
+    <view class="userInfo" wx:if="{{islogin}}">
+        <image class="avatarUrl" src="{{userInfo.avatarUrl}}"></image>
+        <text class="nickName">{{userInfo.nickName}}</text>
+    </view>
+    <view class="collectList" wx:if="{{islogin}}">
+        <van-swipe-cell right-width="{{ 120 }}" wx:for="{{collectList}}" wx:key="*this">
+            <van-cell-group>
+              <van-cell>
+                  <view class="collect">
+                      <image src="{{item.imgUrl}}" data-id="{{index}}" bindtap="goRead" />
+                      <text class="bookName">{{item.bookName}}</text>
+                      <text class="updTime">{{item.updTime}}更新</text>
+                      <view class="fun">
+                          <image src="../../image/ellipsis.svg" />
+                      </view>
+                  </view>
+              </van-cell>
+            </van-cell-group>
+            <view slot="right" class="stick" data-id="{{index}}" bindtap="stick">置顶</view>
+            <view slot="right" class="delete" data-id="{{index}}" bindtap="delete">删除</view>
+        </van-swipe-cell>
+    </view>
+
+    <text class="all" wx:if="{{islogin}}">您已看完全部内容</text>
+</view>
+
+
+        
+
+

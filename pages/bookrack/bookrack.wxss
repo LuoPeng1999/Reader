@@ -1,0 +1,134 @@
+/* pages/bookrack/bookrack.wxss */
+/* pages/login/login.wxss */
+.loginpage{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    align-items: none;
+}
+.loginpage .login{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    font-size: 32rpx;
+    flex-direction: column;
+}
+.loginpage .login image{
+    width: 264rpx;
+    height: 240rpx;
+    padding-top: 40%;
+    margin: 0 auto;
+}
+.loginpage .login .title {
+    color: #A3ABB8;
+    margin-top: 20%;
+    font-size: 28rpx;
+}
+
+.loginpage .login .wxlogin{
+    margin: 30rpx 30rpx;
+    color: white;
+    border-radius: 60rpx;
+    font-size: 32rpx;
+    text-align: center;
+    font-weight: bold;
+    height: 96rpx;
+    line-height: 96rpx;
+    background-image: linear-gradient(270deg,#FF7464 0%,#ED424B 100%);
+    box-shadow: 0 4rpx 20rpx 0 rgba(255,69,72,0.10);
+}
+.loginpage .userInfo{
+    width: 80%;
+    height: 180rpx;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.10);
+}
+.loginpage .userInfo .avatarUrl{
+    width: 120rpx;
+    height: 120rpx;
+    float: left;
+    border-radius: 50%;
+    margin-left: 60rpx;
+    margin-top: 40rpx;
+}
+.loginpage .userInfo .nickName{
+    float: left;
+    margin-left: 60rpx;
+    margin-top: 80rpx;
+    color: #A3ABB8;
+}
+.loginpage .collectList{
+    width: 80%;
+    margin: 0 auto;
+    /* background-color: pink; */
+}
+.loginpage .collectList .collect{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    overflow: hidden;
+}
+.loginpage .collectList .collect image{
+    float: left;
+    width: 124rpx;
+    height: 168rpx;
+}
+.loginpage .collectList .collect .bookName{
+    float: left;
+    margin-top: 8rpx;
+    margin-left: 30rpx;
+    font-size: 32rpx;
+    color: #3B3F47;
+    width: 280rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.loginpage .collectList .collect .updTime{
+    display: block;
+    margin-top: 120rpx;
+    margin-left: 156rpx;
+    color: #3B3F47;
+    font-weight: 300;
+    font-size: 24rpx;
+}
+.loginpage .collectList .collect .fun{
+    float: right;
+    margin-top: -100rpx;
+    margin-right: 20rpx;
+}
+.loginpage .collectList .collect .fun image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.delete{
+    display: inline-block;
+    width: 120rpx;
+    height: 168rpx;
+    background-image: linear-gradient(to left,#5D78C9 0%,#5D86D9 100%);
+    color: white;
+    text-align: center;
+    line-height: 168rpx;
+}
+.stick{
+    display: inline-block;
+    width: 120rpx;
+    height: 168rpx;
+    background-image: linear-gradient(to left,#FF6857 0%,#ED424B 100%);
+    color: white;
+    text-align: center;
+    line-height: 168rpx;
+}
+.loginpage .all{
+    color: #3B3F47;
+    font-weight: 300;
+    font-size: 24rpx;
+    margin-top: 120rpx;
+    margin-bottom: 60rpx;
+    text-align: center;
+}

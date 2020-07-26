@@ -1,0 +1,282 @@
+/* pages/bookstore/bookstore.wxss */
+.bookstorepage {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, #ffffff, #f9f9f9);
+}
+.bookstorepage .search{
+    width: 100%;
+    height: 120rpx;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.bookstorepage .search input {
+    display: block;
+    width: 80%;
+    height: 80rpx;
+    margin: 0 auto;
+    margin-top: 26rpx;
+    line-height: 80rpx;
+    border-radius: 12rpx;
+    padding-left: 80rpx;
+    background-color: #F5F7FA;
+}
+.bookstorepage .search image{
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    left: 60rpx;
+    top: 46rpx;
+}
+
+.bookstorepage .index-classify{
+    height: 108rpx;
+    padding: 0 32rpx;
+    background: #FFFFFF;
+    line-height: 1;
+    box-shadow: 0 4rpx 16rpx 0 rgba(230,235,242,0.50);
+}
+.bookstorepage .index-classify .classify{
+    position: relative;
+    display: inline-block;
+    height: 108rpx;
+    width: 200rpx;
+    /* margin-right: 30rpx; */
+    font-size: 36rpx;
+    line-height: 108rpx;
+    color: #3B3F47;
+    background-color: #fff;
+    /* text-align: center; */
+}
+.bookstorepage .index-classify .classify text:first-child{
+    margin-left: 8rpx;
+    margin-right: 100rpx;
+}
+.bookstorepage .index-classify .classify image{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 54rpx;
+    height: 4rpx;
+    position: absolute;
+    float: left;
+}
+.bookstorepage .index-classify .sexActive{
+    font-weight: 600;
+}
+.bookstorepage .index-classify .lineActive{
+    transform: translateX(136rpx);
+}
+.index-module {
+    margin: 0 32rpx;
+    padding: 62rpx 0 0;
+    border-bottom: 1rpx solid #e7ebf2;
+    overflow: hidden;
+}
+.index-module .time {
+    position: absolute;
+    bottom: 8rpx;
+    font-family: 'Yuewen Font';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 126rpx;
+    margin-left: 8rpx;
+    font-size: 22rpx;
+    color: #fff;
+    line-height: 32rpx;
+    text-align: center;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAQCAYAAAHWopeqAAAAAXNSR0IArs4c6QAABK1JREFUSA2VVj3OFEcQ7e7ZNRKRIyNkOTEiILV9AiMikOzIJ0BIiACRACEnILKET4A/yUcggQPg0AkpCQHYIoAAvOP3U9XTM9+C5Na3011Vr96rqun9tPXN5Wtz3dUy7Vtpe+61NNgt7DbPcyklPjjTpKWFQ31z5dqs7CEr7emL6XkzMnM2+9Su19c/Xp0rYHWC7tQKzwWf1ip8trdx2Yi3XSjUWkPICmmrWoS6rX4A7fjD9/X15atzg3qVIneowyZIe9jbOOzndZpeoHUuJmCTAg8gwoaZoZvFXsVLuVB/+/0HxJVJFi2kYs9h4biNhw3El0yI98QkL6q6nHTYTkq/14gRqbfgKj0HKgw2oXozdCOmWWQ8sCqKcc5x8NHuXJFf+PZq+ROzwXx2V2JEiqosdZBgiouDg8GBK95k2hY/nc/E7NrYsJEP/3cY3kl99Phv1tFJWa7AypxTEhBTuTsTZaGux3HW9/l8ArKRw13h+QqolKOVCK5ejlIxNQhq+ElAjjFODL84xtJY4tIL/Kn8qd2p/G/gApYk2qdIgySxqh6iFnBxWVQXHYqSD3aby19lV94zn/1gYXwxQd5QaQPt25q7kQmUkGZP9DL+vB+sKm977pKp80UxtfZx9fWRMJMYTWIWo7LlxANiqhWPLrDxrfI9UZfHZ92XA7ap3G/mdcgzZOawyKtC6GOXw7I+HDzwbxMn9Fh+LV/VX0+extjd7To13ifzWWHURz4uCfUEjtj+5XkkP2iA/YY43k3h+cwO3QG+VGIMBW2hkOMe4p/KNxfIDZCWXteNG3tcvqFkkTqu3tTxEDcDy/Q0iN/kewTMYeecyJhPbtr4tLd/8MsSDgaiwASIY0sAPPwpOuaTSV1xN8hFio8+FutQmQ8/6X899dkkH9wEsEm8CRiIpTsQtvLoP4rrCeYfcXEWQrmhA0f0LE7BWBcwS11MUOZp3vA7LzH1FfJfyuIt53+8Wh7qwhuPJ9gXAYIGJgbwscuoHgbMYzMGz1idWbzJvb0KicobsqguJ8X+t34v4xxS9dNAnnl+Vh+dPFbzLD0LWuRwgmJvilkK+uroCEY3RJ9PwuDIwciHgyLiimI6V9rWSiuYrN8nTNJErI6qcaUPmPW5szdQHQ7fwr2D559y/tI9Mql5JprXFNazWCclGotDyhpUJB9kjxg7lTB3O2XLosNQRvqShsEKWx9h+PKl0FD6mI+zGtvqI5Uu4/nPCQ79ci4XSzvcqg8efKR4vPmlJuKcpsP6QcKojDUYu4YctQKsGrMz+mKJJ+zPcaqhQV8FMGFMGs8pENzIP1sOu5vp9m9L5mdROPdpI4nz7jaIfV4UMm38eqjJVAAgb5azSLrOV22Dr+cLekw/yFUfC3adKdnz4dC1ByAV5/nf2/PNX34mNn7ZI5RReZnEAxYO/UwTd4XFjsPSL3gKrIAEGZdu58HPEH/xxVJcZvjqwiXOhGJPLjdlAv1cxdH6VJEBh32ZYz/d9UM5c/br/p1XQA34tDyDjA6Qcap6yxpvfJ90jjfEQvnJFa+BNybdKpz+jAnLaPB1JD2p790peRtS3zXpVrLTsVslgCW0QmpfPrx78h8e0Nf2w/cYCAAAAABJRU5ErkJggg==") center bottom no-repeat no-repeat;
+    background-size: 100% auto;
+    font-weight: 500;
+}
+.index-module .time text {
+    padding: 0 4rpx;
+}
+.index-module .time image {
+    width: 4rpx;
+    height: 8rpx;
+    vertical-align: middle;
+}
+.index-module .index-module-header {
+    position: relative;
+}
+.index-module .index-module-header-title {
+    /* SourceHanSerifSC-Bold */
+    font-family: '宋体';
+    font-weight: 600;
+    font-size: 40rpx;
+}
+.index-module .index-module-book {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 34rpx;
+    margin-right: -31.8rpx;
+}
+
+.index-module .index-module-book .index-module-book-item {
+    width: 148rpx;
+    margin-bottom: 32rpx;
+    margin-right: 31.8rpx;
+}
+
+.index-module .index-module-book .index-module-book-item image {
+    display: block;
+    width: 100%;
+    height: 194rpx;
+    border: 1rpx solid rgba(0,0,0,0.1);
+    box-shadow: 0 2rpx 24rpx 0 rgba(59,63,71,0.1);
+    border-radius: 4rpx;
+}
+
+.index-module .index-module-book .index-module-book-item text {
+    display: block;
+}
+
+.index-module .index-module-book .index-module-book-item .index-module-book-name {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: 20rpx;
+    line-height: 32rpx;
+    color: #2E333A;
+    font-size: 24rpx;
+}
+
+.index-module .index-module-book .index-module-book-item .index-module-book-auth {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    margin-top: 8rpx;
+    font-weight: 300;
+    color: #848A97;
+    font-size: 24rpx;
+}
+.index-module .index-module-book .index-module-book-item .free{
+    margin-top: 8rpx;
+    font-weight: 300;
+    color: red;
+    font-size: 24rpx;
+}
+.index-container {
+    color: #3B3F47;
+    font-size: 24rpx;
+    padding-bottom: 40rpx;
+}
+.index-module-popular {
+    position: relative;
+    margin-top: 34rpx;
+    font-size: 24rpx;
+    color: rgba(255,255,255,0.8);
+    line-height: 28rpx;
+    overflow: hidden;
+    border-radius: 8rpx;
+    display: flex;
+    padding: 0 24rpx 0 32rpx;
+    height: 240rpx;
+    align-items: center;
+}
+
+.index-module-popular .popular-cover-blur-wrap {
+    position: absolute;
+    overflow: hidden;
+    transform: translateY(-50%);
+    top: 50%;
+    left: -40rpx;
+}
+
+.index-module-popular .popular-cover-blur {
+    width: 900rpx;
+    height: 1080rpx;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    filter: brightness(0.2) opacity(0.8) blur(30rpx);
+}
+
+.index-module-popular .popular-list .popular-book {
+    position: relative;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+}
+
+.index-module-popular .popular-list .popular-book .popular-book-title {
+    max-width: 260rpx;
+    margin-right: 20rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 28rpx;
+    color: #fff;
+    vertical-align: bottom;
+    font-weight: 500;
+}
+
+.index-module-popular .popular-list .popular-book .popular-book-detail {
+    max-width: 180rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: bottom;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 25rpx;
+}
+
+.index-module-popular .popular-list .popular-book .caret-right {
+    position: absolute;
+    left: -16rpx;
+    top: 24rpx;
+    width: 12rpx;
+    height: 16rpx;
+}
+
+.index-module-popular .popular-cover-list {
+    position: absolute;
+    top: 24rpx;
+    right: 40rpx;
+    transform-style: preserve-3d;
+    perspective: 72px;
+    transition: transform .3s;
+    transition: transform .3s,-webkit-transform .3s;
+}
+
+.index-module-popular .popular-cover-list .popular-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: opacity .3s,-webkit-transform .3s;
+    transition: opacity .3s,transform .3s;
+    transition: opacity .3s,transform .3s,-webkit-transform .3s;
+    transform-origin: center center;
+    perspective-origin: 50% 50%;
+}
+
+.index-module-popular .popular-cover-list .popular-cover image {
+    display: block;
+    width: 140rpx;
+    height: 190rpx;
+    border: 1rpx solid rgba(0,0,0,0.1);
+    box-shadow: 0 2rpx 24rpx 0 rgba(59,63,71,0.1);
+    border-radius: 4rpx;
+}
+.free-more{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: inline-block;
+    padding: 20rpx 0 0 20rpx;
+    font-size: 28rpx;
+    color: #848A97;
+}
+.free-more image{
+    width: 24rpx;
+    height: 24rpx;
+}

@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/bookstore/bookstore",
+    "pages/recommend/recommend",
+    "pages/bookrack/bookrack",
+    "pages/search/search",
+    "pages/searchResult/searchResult",
+    "pages/details/details",
+    "pages/read/read",
+    "pages/copyright/copyright",
+    "pages/classify/classify",
+    "pages/classifyres/classifyres"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小说阅读器",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#3B3F47",
+    "selectedColor": "#DA2912",
+    "borderStyle": "white",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/recommend/recommend",
+        "iconPath": "image/recommend.png",
+        "selectedIconPath": "image/recommendActive.png",
+        "text": "推荐"
+      },
+      {
+        "pagePath": "pages/bookstore/bookstore",
+        "iconPath": "image/bookstore.png",
+        "selectedIconPath": "image/bookstoreActive.png",
+        "text": "书城"
+      },
+      {
+        "pagePath": "pages/bookrack/bookrack",
+        "iconPath": "image/bookrack.png",
+        "selectedIconPath": "image/bookrackActive.png",
+        "text": "书架"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
